@@ -1,0 +1,16 @@
+<style>
+    .movie {
+        border: 2px solid black;
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+        width: 600px;
+    }
+</style>
+<h1>Results Page</h1>
+<% data["Search"].forEach(function(movie){ %>
+    <div class="movie">
+        <img src=<%= movie["Poster"] %> >
+        <p><%= movie.Title %></p>
+    </div>
+<% }); %>

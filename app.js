@@ -7,8 +7,8 @@ app.get("/results", function(req, res){
     console.log("access results");
     request(key + "&s=california", function(error, response, body){
         if(!error && response.statusCode == 200){
-            var results = JSON.parse(body);
-            res.send(results["Search"][0]["Poster"]);
+            var data = JSON.parse(body);
+            res.render("results", {data: data});
         } else {
             res.send("Oh no " + error);
         }
